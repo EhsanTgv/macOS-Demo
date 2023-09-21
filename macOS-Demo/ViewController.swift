@@ -29,5 +29,16 @@ class ViewController: NSViewController {
         myAlert.runModal()
     }
     
+    @IBAction func sendMessageTapped(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            let myCentre = NSUserNotificationCenter.default
+            let notification = NSUserNotification.init()
+            notification.title = "Notification Message"
+            notification.subtitle = "Subtitle Notification"
+            notification.informativeText = "Text Demo"
+            notification.soundName = "bell"
+            myCentre.deliver(notification)
+        })
+    }
 }
 
