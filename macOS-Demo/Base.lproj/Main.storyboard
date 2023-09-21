@@ -731,8 +731,51 @@
                                     <action selector="sendMessageTapped:" target="XfG-lQ-9wD" id="HHw-md-bac"/>
                                 </connections>
                             </button>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Se3-Um-KLe">
+                                <rect key="frame" x="17" y="102" width="149" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="FdF-YG-4FT">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Hci-Lb-yqK"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="changeColorTapped:" target="XfG-lQ-9wD" id="Wd7-nF-Ei5"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-AH-HuO">
+                                <rect key="frame" x="17" y="52" width="149" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="JC3-3H-dDZ">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="7Xw-ZM-NX0"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="changeFontTapped:" target="XfG-lQ-9wD" id="gRi-W3-KCH"/>
+                                </connections>
+                            </popUpButton>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzz-0u-uuJ">
+                                <rect key="frame" x="245" y="154" width="163" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daF-uY-VxU">
+                                <rect key="frame" x="243" y="61" width="167" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Ehsan Tgv" id="B9S-EB-IPz">
+                                    <font key="font" metaFont="system" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="colorDropDown" destination="FdF-YG-4FT" id="eai-wk-K2X"/>
+                        <outlet property="colorView" destination="kzz-0u-uuJ" id="kHp-ep-Xgv"/>
+                        <outlet property="fontDropDown" destination="JC3-3H-dDZ" id="X6d-zT-YxS"/>
+                        <outlet property="sampleFontLabel" destination="daF-uY-VxU" id="ow1-5J-YYt"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,10 +9,24 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var colorDropDown: NSPopUpButtonCell!
+    @IBOutlet weak var fontDropDown: NSPopUpButtonCell!
+    
+    @IBOutlet weak var colorView: NSView!
+    
+    @IBOutlet weak var sampleFontLabel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.populateColorsFontFamilies()
+    }
+    
+    func populateColorsFontFamilies() {
+        colorDropDown.addItems(withTitles: ["Choose Color", "white", "red", "green", "blue"])
+        colorView.wantsLayer = true
+        colorView.layer?.backgroundColor = NSColor.white.cgColor
+        fontDropDown.addItems(withTitles: NSFontManager.shared.availableFontFamilies)
     }
 
     override var representedObject: Any? {
@@ -39,6 +53,32 @@ class ViewController: NSViewController {
             notification.soundName = "bell"
             myCentre.deliver(notification)
         })
+    }
+    
+    @IBAction func changeColorTapped(_ sender: NSPopUpButton) {
+        if colorDropDown.indexOfSelectedItem == 1 {
+            colorView.wantsLayer = true
+            colorView.layer?.backgroundColor = NSColor.white.cgColor
+        } else if colorDropDown.indexOfSelectedItem == 2 {
+            colorView.wantsLayer = true
+            colorView.layer?.backgroundColor = NSColor.red.cgColor
+        }
+        else if colorDropDown.indexOfSelectedItem == 3 {
+           colorView.wantsLayer = true
+           colorView.layer?.backgroundColor = NSColor.green.cgColor
+       }
+        else if colorDropDown.indexOfSelectedItem == 4 {
+           colorView.wantsLayer = true
+           colorView.layer?.backgroundColor = NSColor.blue.cgColor
+       }
+    }
+    
+    
+    @IBAction func changeFontTapped(_ sender: NSPopUpButton) {
+        print(sender.selectedItem!.title)
+        let selectedMember = sender.selectedItem!.title
+        let font = NSFont.init(name: selectedMember, size: 18)
+        sampleFontLabel.font = font
     }
 }
 
