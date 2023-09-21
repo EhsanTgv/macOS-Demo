@@ -21,6 +21,13 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func sendAlertTapped(_ sender: Any) {
+        let myAlert = NSAlert.init()
+        myAlert.messageText = "My Alert App"
+        myAlert.informativeText = "Hello Alert App"
+        myAlert.addButton(withTitle: "OK")
+        myAlert.runModal()
+    }
+    
 }
 
